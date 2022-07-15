@@ -140,13 +140,60 @@ const questions = [
         }
     }
 },
+{
+    type: 'input',
+    name: 'test',
+    message: 'Please provide instructions on how to test the app. (Required)',
+    validate: testInput => {
+        if (testInput) {
+            return true;
+        } else {
+            console.log('Please enter your use test instructions!');
+            return false;
+        }
+    }
+}
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/generated-README.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        });
+    });
+};
 
 // TODO: Create a function to initialize app
-function init() {}
 
+
+const init = () => {
+
+    return inquirer.prompt(questions)
+    .then(readmeData => {
+        return readmeData;
+    })
+}
 // Function call to initialize app
-init();
+init()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMD => {
+    return writeFile(pageMD);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+})
