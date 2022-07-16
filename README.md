@@ -27,4 +27,4 @@ The project will help a user generate a README without having to worry about app
 
 ![README Screenshot No License](utils/images/screenshot1.png)
 
-![README Screenshot with License](utils/images/with-license-screenshot.png)
+![README Screenshot with License](utils/images/screenshot2.png)
