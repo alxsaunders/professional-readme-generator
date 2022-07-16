@@ -20,11 +20,11 @@ The project will help a user generate a README without having to worry about app
 
 # Walkthrough-Video
 
-[a relative link](other_file.md)
+[Walkthrough Video Link](https://drive.google.com/file/d/1ZRC4EsiyDaJLrQ7PuI2vyRxhxPfjWXLL/view)
 
 
 # ScreenShots 
 
-![README Screenshot No License](utils/images/no-license-screenshot.png)
+![README Screenshot No License](utils/images/screenshot1.png)
 
 ![README Screenshot with License](utils/images/with-license-screenshot.png)
